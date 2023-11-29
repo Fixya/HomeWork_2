@@ -1,0 +1,341 @@
+<!DOCTYPE html><html lang="en">
+<head>    <meta charset="UTF-8">
+    <title>Title</title>    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            background-color: #E9F5FF;
+        }
+        .header {
+            padding-top: 40px;
+            height: 755px;
+            background: rgb(255,255,255);
+            background: linear-gradient(0deg, rgba(233,245,255,1) 30%, rgba(19,145,206,1) 100%);
+        }
+        .logoContainer {
+            display: flex;
+            align-items: center;
+        }
+        .nav {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navLinks {
+            width: 500px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style-type: none;
+            margin-right: 20px ;
+        }
+        .navMenu {
+            display: flex;
+        }
+        .link a {
+            text-decoration: none;
+            color: #25468A;
+            font-weight: bold;
+        }
+        .textTitle {
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-family: "Roboto Thin",serif;
+        }
+        .btn {
+            padding: 9px 23px;
+            background-color: #FFF;
+            border-radius: 24px;
+            border: none;
+        }
+        .hero{
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .headline{
+            width: 544px;
+            height: 270px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .headlinetxt{
+            padding-top: 5px;
+            font-size: 90px;
+            font-weight: bold;
+            color: #25468A;
+        }
+        .hlt1{
+            font-size: 30px;
+            color: #3B4A6B;
+        }
+        .hlt2{
+            font-size: 18px;
+            color: #3B4A6B;
+        }
+        .btnheaderline{
+            width: 220px;
+            height: 51px;
+            background-color: #F7BA0E;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .image1{
+            margin-left: 70px;
+        }
+        .section{
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .benefits{
+            width: 1120px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .benefit{
+            width: 335px;
+            height: 160px;
+            background-color: #4293f5;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .beftxt{
+            width: 250px;
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .main{
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .mainPart{
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .maintoptxt{
+            width: 350px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            color: #1391CE;
+            font-size: 35px;
+        }
+        .features{
+            margin-top: 60px;
+            width: 1120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .feature{
+            width: 1120px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .sample{
+            margin-top: 30px;
+            width: 430px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .sampletxt1{
+            font-size: 25px;
+            color: #25468A;
+        }
+        .sampletxt2{
+            font-size: 30px;
+            font-weight: bold;
+            color: #1391CE;
+        }
+        .sampletxt3{
+            font-size: 20px;
+            color: #4F4F4F;
+        }
+        .sNorm{
+            height: 400px;
+            justify-content: space-around;
+        }
+        .samplechoice{
+            font-size: 25px;
+            color: #1391CE;
+        }
+        .lastSection{
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 1120px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .mind{
+            width: 480px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .footer{
+            margin-top: 80px;
+            padding-top: 40px;
+            height: 100px;
+            background-color: #1391CE;
+            display: flex;
+            justify-content: center;
+        }
+        .navFoot{
+            width: 1215px;
+            height: 55px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .foot{
+            width: 1215px;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <nav class="nav">
+            <div class="logoContainer">
+                <img src="./pic/logo.png" alt="logo">
+                <p class="textTitle">HandBrake</p>
+            </div>
+            <div class="navMenu">
+                <ul class="navLinks">
+                    <li class="link"><a href="#">Docs</a></li>
+                    <li class="link"><a href="#">GitHub</a></li>
+                    <li class="link"><a href="#">News</a></li>
+                    <li class="link"><a href="#">Community & Support</a></li>
+                </ul>
+                <button class="btn">Downloads</button>
+            </div>
+        </nav>
+        <nav class="hero">
+            <div class="headline">
+                    <a class="headlinetxt">Handbrake</a>
+                    <a class="hlt1">The open source video transcoder</a>
+                    <a class="hlt2">HandBrake is a tool for converting video from nearly any format to a selection of modern, widely supported codecs</a>
+                <button class="btn btnheaderline">Download for Free</button>
+            </div>
+            <div class="image1">
+                <img src="./pic/comp.png" alt="comp">
+            </div>
+        </nav>
+    </header>
+    <section class="section">
+        <div class="benefits">
+            <div class="benefit"><a class="beftxt">Convert video from nearly any format</a></div>
+            <div class="benefit"><a class="beftxt">Free and Open Source video converter</a></div>
+            <div class="benefit"><a class="beftxt">Multi-Platform desktop application</a></div>
+        </div>
+    </section>
+    <main class="main">
+        <nav class="mainPart">
+            <div class="maintoptxt">
+                <a>Just a few reason you will love HandBrake</a>
+                <img src="./pic/rect_yellow.png" alt="yellow rect">
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <img src="./pic/mainImage1.png" alt="mainImage1">
+                    <div class="sample">
+                        <a class="sampletxt1">Optimised for easy use</a>
+                        <a class="sampletxt2">Built-in Device Presets</a>
+                        <a class="sampletxt3">Get started with HandBrake in seconds by choosing a profile optimised for your device, or choose a universal profile for standard or high quality conversions. Simple, easy, fast. For those that want more choice, tweak many basic and advanced options to improve your encodes.</a>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="sample sNorm">
+                        <a class="sampletxt1">Modern video formats</a>
+                        <a class="sampletxt2">Supported Input Sources</a>
+                        <a class="sampletxt3">Handbrake can process most common multimedia files and any DVD or BluRay sources that do not contain any kind of copy protection.</a>
+                        <a class="samplechoice">Outputs</a>
+                        <p>
+                            <input type="checkbox">File Containers: .MP4(.M4V) and .MKV<Br>
+                            <input type="checkbox">Video Encoders: H.265 (x265 and QuickSync), H.264(x264 and QuickSync), H.265 MPEG-4 and MPEG-2, VP8, VP9 and Theora<Br>
+                            <input type="checkbox">Audio Encoders: AAC / HE-AAC, MP3, Flac, AC3, or Vorbis<Br>
+                            <input type="checkbox">Audio Pass-thru: AC-3, E-AC3, DTS, DTS-HD, TrueHD, AAC and MP3 tracks<Br>
+                        </p>
+                    </div>
+                    <img src="./pic/mainImage2.png" alt="mainImage2">
+                </div>
+                <div class="feature">
+                    <img src="./pic/mainImage3.png" alt="mainImage3">
+                    <div class="sample sNorm">
+                        <a class="sampletxt1">With you in mind</a>
+                        <a class="sampletxt2">Even more features for you</a>
+                        <p class="sampletxt3">
+                            <input type="checkbox">Title / chapter and range selection<Br>
+                            <input type="checkbox">Batch Scan and Queueing of encodes<Br>
+                            <input type="checkbox">Live Static and Video Preview<Br>
+                            <input type="checkbox">Support for VFR and CFR<Br>
+                            <input type="checkbox">Chapter Markers<Br>
+                            <input type="checkbox">Subtitles (VobSub, Closed Captions CEA-608, SSA, SRT)<Br>
+                            <input type="checkbox">Constant Quality or Average Bitrate Video Encoding<Br>
+                            <input type="checkbox">Video Filters: Deinterlacing, Decomb, Denoise, Detelecine, Deblock, Grayscale, Cropping and scaling<Br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </main>
+    <section class="lastSection">
+        <div class="mind">
+            <a class="sampletxt2">Open Source Licence</a>
+            <a class="sampletxt3">Most of HandBrake's source code is covered by the GNU General Public License, version 2. A copy of which is included with every release in the COPYING file. Portions are covered under BSD 3 Clause</a>
+        </div>
+        <div class="mind">
+            <a class="sampletxt2">Credits</a>
+            <a class="sampletxt3">HandBrake uses a lot of (L)GPL or BSD licensed libraries: A list of these is available here.</a>
+            <a class="sampletxt3">Thank their authors!</a>
+        </div>
+    </section>
+    <footer class="footer">
+        <nav class="navFoot">
+            <img src="./pic/rect_white.png" alt="white rect">
+            <div class="foot">
+                <div>
+                    <a>Copyright 2020 ©</a>
+                    <a style="color: white">The HandBrake Team</a>
+                    <a> | Privacy Policy</a>
+                </div>
+                <div>
+                    <a>Found a bug?</a>
+                    <a style="color: white"> Talk to us</a>
+                </div>
+            </div>
+        </nav>
+    </footer>
+</div>
+</body>
+</html>
