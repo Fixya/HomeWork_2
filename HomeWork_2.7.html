@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HomeWork</title>
+</head>
+<body>
+
+<script>
+    //1
+    const str1 = 'js'
+    console.log(str1.toUpperCase())
+
+    //2
+    const str2 = 'я учу javascript!'
+    console.log(str2.indexOf('учу'))
+
+    //3
+    const str3 = 'я учу javascript!'
+    console.log(str3.split(' '))
+
+    //4
+    const str4 = 'aaa bbb ccc'
+    console.log(str4.substr(4, 3))
+    console.log(str4.substring(4, 8))
+    console.log(str4.slice(4, 8))
+
+    //5
+    const date = '2025-12-31'
+    const improvement = date.split('-').reverse().join('.')
+    console.log(improvement)
+
+    //6
+    const well = date.split('-').reverse().join('/')
+    console.log(well)
+
+    //7
+    const obj = {
+        name: 'Sasha',
+        age: 21,
+        address: {
+            city: 'Minsk'
+        }
+    }
+    const obj2 = {...obj, address: {...obj.address}}
+
+    //8
+    const abjec = {
+        js: 'test',
+        jq: 'hello',
+        css: 'world'
+    }
+    console.log(Object.keys(abjec))
+
+    //9
+    const arr1 = ['a', 'b', 'c']
+    const arr2 = [1, 2, 3]
+    const arr3 = [...arr1, ...arr2]
+    console.log(arr3)
+
+    //10
+    const arr4 = ['a', 'b', 'c']
+    const arr5 = [1, 2, 3]
+    arr4.push(...arr5)
+    console.log(arr4)
+
+    //11 (два одинаковых задания?)
+    const arr6 = ['a', 'b', 'c']
+    arr6[arr6.length] = 1
+    arr6[arr6.length] = 2
+    arr6[arr6.length] = 3
+    console.log(arr6)
+
+    //12
+    const arr7 = [1,2,3,4,5]
+    const arr8 = arr7.slice(3, arr7.length)
+    console.log(arr8)
+
+    //13
+    const anyNumber = [42, 65, 49, 68, 56, 47, 70, 42, 51, 35, 58, 63, 40, 70]
+    anyNumber.map((item, index) => {
+            console.log("Индексу " + index + " - соответствует число " + item)
+    })
+
+    //14
+    console.log(anyNumber.sort((a,b) => a - b))
+
+</script>
+</body>
+</html>
