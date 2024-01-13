@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HomeWork</title>
+    <style>
+        .blok{
+            margin: auto;
+            width: 200px;
+            height: 250px;
+            background-color: burlywood;
+        }
+        .table{
+            margin: 10px;
+            width: auto;
+            height: 50px;
+            background-color: wheat;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            font-size: 25px;
+        }
+        .but{
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .bbut{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .bl{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .butt{
+            width: auto;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="blok">
+    <div id="table" class="table"></div>
+    <div id="root" class="but">
+        <div class="bbut">
+            <button class="butt">ac</button>
+            <button class="butt">c</button>
+            <button class="butt">/</button>
+        </div>
+        <div class="bl">
+            <button class="butt">7</button>
+            <button class="butt">8</button>
+            <button class="butt">9</button>
+            <button class="butt">x</button>
+            <button class="butt">4</button>
+            <button class="butt">5</button>
+            <button class="butt">6</button>
+            <button class="butt">-</button>
+            <button class="butt">1</button>
+            <button class="butt">2</button>
+            <button class="butt">3</button>
+            <button class="butt">+</button>
+        </div>
+        <div class="bbut">
+            <button class="butt">0</button>
+            <button class="butt">.</button>
+            <button class="butt">=</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const root = document.getElementById('root')
+    const table = document.getElementById('table')
+
+    //константы
+    console.log(root)
+
+    const z = {
+        num1: '',
+        num2: '',
+        sign: '',
+        compute: '',
+    }
+
+    const numbers = ['0','1','2','3','4','5','6','7','8','9','.']
+    const signs = ['+','-','x','/']
+    const extra = ['ac', 'c', '=']
+
+    //функции
+    const eventNumber = (num) => {
+        if(Boolean(z.sign) === true) {
+            z.num2 = z.num2 + num
+        } else {
+            z.num1 = z.num1 + num
+        }
+
+    }
+    const eventSign = (sing_) => {
+        z.sign = sing_
+    }
+    const eventExtra = (extra) => {
+        switch (extra) {
+            case 'ac':
+                useAC()
+                break
+            case 'c':
+                useC()
+                break
+            case '=':
+                useEqual()
+                break
+        }
+    }
+
+    const cleaning = () => {
+        z.num1 = ''
+        z.num2 = ''
+        z.sign = ''
+    }
+
+    const useAC = () => {
+        cleaning()
+        z.compute = ''
+    }
+    const useC = () => {
+        if(Boolean(z.num2) === true){
+            z.num2 = ''
+        } else {
+            z.num1 = ''
+        }
+    }
+    const useEqual = () => {
+        switch (z.sign) {
+            case '/':
+                z.compute = z.num1 / z.num2
+                break
+            case 'x':
+                z.compute = z.num1 * z.num2
+                break
+            case '-':
+                z.compute = z.num1 - z.num2
+                break
+            case '+':
+                z.compute = Number(z.num1) + Number(z.num2)
+                break
+        }
+        cleaning()
+    }
+
+    const updateTable = () => {
+        table.innerHTML = ''
+        const allActWNum = document.createElement('h')
+        if(Boolean(z.compute) === false) {
+            allActWNum.innerText = z.num1 + z.sign + z.num2
+        }else{
+            allActWNum.innerText = z.compute
+        }
+        table.append(allActWNum)
+    }
+
+    //при использовании кнопок
+    const uses = () => {
+        const text = event.target.textContent
+        numbers.map((item) => {if(item === text) {eventNumber(text)}} )
+        signs.map((item) => {if(item === text) {eventSign(text)}} )
+        extra.map((item) => {if(item === text) {eventExtra(text)}} )
+        updateTable()
+    }
+
+    //основные клики и вывод
+    root.addEventListener("click", uses)
+
+</script>
+</body>
+</html>
