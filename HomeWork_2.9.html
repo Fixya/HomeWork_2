@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .mainClass{
+            margin: 5px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .productСell{
+            margin: 10px;
+            width: 400px;
+            height: auto;
+            border: 1px solid black;
+        }
+        .category{
+            color: #499190;
+            font-size: 23px;
+        }
+        .description{
+            color: #26c600;
+        }
+        .image{
+            width: 200px;
+
+        }
+        .price{
+            color: #f20005;
+        }
+        .title{
+
+        }
+    </style>
+</head>
+<body>
+<div id="root" class="mainClass">
+</div>
+<script>
+    const root = document.getElementById('root')
+
+    const creationObject = ({product, classProduct}) => {
+        const products = document.createElement('p')
+        products.innerText = product
+        products.classList.add(classProduct)
+        return products
+    }
+    // const creationPicture = ({picture, classProduct}) => {
+    //     const pictures = document.createElement('img')
+    //     pictures.scr = picture
+    //     pictures.classList.add(classProduct)
+    //     return pictures
+    // }
+
+    const creationPicture = (name) => {
+        const pictures = new Image()
+        pictures.scr = name.image
+        pictures.classList.add("image")
+        return pictures
+    }
+
+    const getAllProducts = (product) => {
+        product.map((name) => {
+            const d1v = document.createElement('div')
+            d1v.classList.add('productСell')
+            d1v.append(creationObject({product: name.category, classProduct: "category"}))
+            d1v.append(creationObject({product: name.description, classProduct: "description"}))
+            //d1v.append(creationPicture({picture: name.image, classProduct: "image"}))
+            d1v.append(creationPicture(name))
+            d1v.append(creationObject({product: name.price, classProduct: "price"}))
+            d1v.append(creationObject({product: name.title, classProduct: "title"}))
+            root.append(d1v)
+        })
+        // const descriptionProd = document.createElement('p')
+        // const imageProd = document.createElement('img')
+        // const priceProd = document.createElement('p')
+        // const titleProd = document.createElement('p')
+    }
+
+    fetch('https://fakestoreapi.com/products')
+        .then(res=>res.json())
+        .then(json=>getAllProducts(json))
+
+// category : "men's clothing"
+// description : "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday"
+// image : "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+// price : 109.95
+// rating : {rate: 3.9, count: 120}
+// title : "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
+</script>
+</body>
+</html>
