@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    //### Тема 1: Строки
+        //1.
+    const strJS = 'JavaScript is awesome!'
+    console.log(strJS)
+
+    const changeString = (newStr, text) => {
+        return console.log(newStr + ' - ' + text)
+    }
+
+    changeString(strJS.toUpperCase(), 'строка в верхнем регистре')
+    changeString(strJS.toLowerCase(), 'строка в нижнем регистре')
+    changeString(strJS.indexOf('awesome'), 'позиция подстроки \'awesome\'')
+
+        //2.
+    const hello = 'Hello'
+    const world = 'World'
+
+    const joinStrings = (str1, str2) => {
+        return str1 + ' ' + str2
+    }
+
+    console.log(joinStrings(hello, world))
+
+    const name = 'Magpie'
+    const surname = 'LoveCheese'
+
+    const templateLiterals = `Привет, ${name} ${surname}`
+
+    console.log(templateLiterals)
+
+
+    //### Тема 2: Объекты
+        //1.
+    const person = {
+        name: 'Andrew',
+        age: 21,
+        hobbies: 'likes to take care of flowers',
+        getPerson: () => {
+            console.log(person.name + ' ' + person.age)
+        }
+    }
+
+    person.getPerson()
+
+        //2.
+    person.age = 19
+    person.getPerson()
+
+    person.favoriteColor = 'blue'
+
+    console.log(person)
+
+
+    //### Тема 3: Массивы
+        //1.
+    const fruits = ['apple', 'banana', 'pineapple', 'tangerine', 'lemon']
+
+    const inferenceFruit = (arr) => {
+        console.log(arr)
+        for(let i = 0; i < arr.length; i++){
+            console.log(arr[i])
+        }
+    }
+    inferenceFruit(fruits)
+
+    fruits.push('pear')
+    fruits.unshift('garnet')
+    inferenceFruit(fruits)
+
+        //2.
+    fruits.sort()
+    inferenceFruit(fruits)
+    console.log('основной массив')
+
+    const newFriuts = fruits.map((fruit) => fruit.toUpperCase());
+    inferenceFruit(newFriuts)
+
+
+    //### Тема 4: Функции
+        //1.
+    const name1 = 'Dima'
+    const name2 = 'Misha'
+    const name3 = 'Masha'
+
+    const greet = (name) => {
+        console.log(`Привет, ${name}!`)
+    }
+
+    greet(name1)
+    greet(name2)
+    greet(name3)
+
+        //2.
+    const numders = [1,2,3,4,5,6]
+    const madeMore = (num) => {
+        return num + 5
+    }
+
+    const processArray = (arr, handler) => {
+        const newArr = arr.map((item) => { return handler(item) })
+        return console.log(newArr)
+    }
+
+    processArray(numders, madeMore)
+
+
+    //### Тема 5: Промисы
+    const promise = new Promise((resolve, reject) => {
+        // Add a function to handle the promise's resolution
+        setTimeout(() => {
+            resolve("Промис выполнен!");
+        }, 2000);
+    });
+
+    const promise2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject("Промис отклонён!");
+        }, 3000);
+    });
+
+    promise.then((message) => {
+        console.log(message);
+    });
+
+    promise2.catch((message) => {
+        console.log(message);
+    });
+
+    promise.finally(() => {
+        console.log('промис отработал!');
+    })
+
+    promise2.finally(() => {
+        console.log('промис отработал!');
+    })
+
+</script>
+</body>
+</html>
